@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const phoneInputField = document.querySelector("#telefono");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="validacion-incumplida" class="alerta-oculta">
+    <p>
+      <img id="emoticono-alerta" src="assets/images/alerta.png">
+      Por favor, cumplimenta correctamente todos los campos del formulario.
+    </p>
+  </div>
+
+  <input type="checkbox" id="theme-toggle" (click)="toggleTheme()">
+  <label class="switch" for="theme-toggle"></label>
+
+  <h2>Formulario de Registro</h2>
+  <p>Por favor, cumplimente todos los datos que se piden a continuación</p>
+  <form>
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="registro.nombre"><br>
+
+    <label for="apellido1">Primer Apellido:</label><br>
+    <input type="text" id="apellido1" name="apellido1" [(ngModel)]="registro.apellido1"><br>
+
+    <label for="apellido2">Segundo Apellido:</label><br>
+    <input type="text" id="apellido2" name="apellido2" [(ngModel)]="registro.apellido2"><br>
+
+    <label for="telefono">Teléfono:</label><br>
+    <input type="tel" id="telefono" name="telefono" [(ngModel)]="registro.telefono"><br><br>
+
+    <label for="fecha">Fecha Nacimiento:</label><br>
+    <input type="date" id="fecha" name="fecha" [(ngModel)]="registro.fecha"><br>
+
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email" [(ngModel)]="registro.email"><br>
+
+    <label for="password">Contraseña:</label><br>
+    <div class="password-container">
+      <input type="password" id="password" name="password" [(ngModel)]="registro.password">
+      <button type="button" (click)="mostrarPassword()" class="show-password-button">
+        <img src="assets/images/eye-icon.png">
+      </button>
+    </div>
+
+    <label for="password2">Repite Contraseña:</label><br>
+    <input type="password" id="password2" name="password2" [(ngModel)]="registro.password2">
+
+    <button type="button" (click)="generarPassword()">Generar Password</button>
+    <button type="button" (click)="validarFormulario()">Registrar</button>
+    <button type="reset">Limpiar</button>
+  </form>
+</body>
+
+</html>

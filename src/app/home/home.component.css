@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h2,
+p {
+  text-align: center;
+}
+
+form {
+  max-width: 400px; /* Cambié 'width' a 'max-width' para que el formulario sea responsivo */
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%; /* Cambié 'calc(100% - 10px)' a '100%' para simplificar */
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Añadí 'box-sizing: border-box;' para incluir el padding y border en el ancho total */
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #20b65c;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="reset"] {
+  background-color: #dc3545;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.dark-theme {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-theme form {
+  color: black;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#theme-toggle {
+  display: none;
+}
+
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 34px;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: white;
+  top: 4px;
+  left: 4px;
+  transition: 0.3s;
+}
+
+#theme-toggle:checked + .switch::after {
+  transform: translateX(26px);
+}
+
+.password-container {
+  position: relative;
+}
+
+.show-password-button {
+  position: absolute;
+  top: 15%;
+  right: -20px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.show-password-button img {
+  width: 40px;
+  height: auto;
+}
+
+.alerta-oculta {
+  display: none;
+  background-color: #ffcdd2;
+  color: #d32f2f;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.alerta-oculta p {
+  margin: 0;
+}
+
+#emoticono-alerta {
+  width: 50px;
+  height: 30px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
